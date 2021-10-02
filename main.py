@@ -29,10 +29,11 @@ moves = ['F', 'T', 'L', 'R']
 @app.route("/", methods=['POST'])
 def move():
     jsondata = request.get_json(force=True)
-    str1 = ''.join(jsondata['arena'][0])
-    logger.info("DIMS is = " + str1)
+    #str1 = ''.join(jsondata['arena'][0])
+    #logger.info("DIMS is = " + str1)
+    logger.info(type(jsondata['arena']))
     #logger.info(request.json)
-    return moves[1]
+    return moves[0]
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
