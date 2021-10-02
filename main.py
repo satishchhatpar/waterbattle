@@ -26,6 +26,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 moves = ['F', 'T', 'L', 'R']
+me = "https://python-bot-fwutkkw3ka-as.a.run.app"
 
 @app.route("/", methods=['POST'])
 def move():
@@ -33,7 +34,8 @@ def move():
     print(type(jsondata))
     print(type(jsondata['arena']))
     print(type(jsondata['arena']['state']))
-    return moves[1]
+    print(type(jsondata['arena']['state'][me]))
+    return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
