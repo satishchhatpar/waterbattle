@@ -29,7 +29,8 @@ moves = ['F', 'T', 'L', 'R']
 @app.route("/", methods=['POST'])
 def move():
     jsondata = request.get_json(force=True)
-    logger.info("DIMS is = " + ''.join(jsondata['arena']['dims']))
+    str1 = ''.join(jsondata['arena']['dims'])
+    logger.info("DIMS is = " + str1)
     #logger.info(request.json)
     return moves[1]
 
