@@ -33,9 +33,10 @@ def move():
     #logger.info("DIMS is = " + str1)
     #logger.info(type(jsondata['arena']))
     data = jsondata['arena']
-    logger.info(data['dims'])
+    #logger.info(data['dims'])
+    logger.info(type(data['state']))
     #logger.info(request.json)
-    return moves[0]
+    return moves[3]
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
