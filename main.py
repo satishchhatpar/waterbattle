@@ -31,7 +31,7 @@ moves = ['F', 'T', 'L', 'R']
 def move():
     jsondata = request.get_json(force=True)
     data = json.loads(jsondata)
-    print(data['arena'])
+    print(type(data['arena']['state']))
     return moves[3]
 
 if __name__ == "__main__":
