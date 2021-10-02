@@ -28,8 +28,8 @@ moves = ['F', 'T', 'L', 'R']
 
 @app.route("/", methods=['POST'])
 def move():
-    request.get_data()
-    logger.info(request.json)
+    #request.get_data()
+    #logger.info(request.json)
     return moves[1]
 
 if __name__ == "__main__":
