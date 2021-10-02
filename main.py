@@ -29,9 +29,8 @@ moves = ['F', 'T', 'L', 'R']
 
 @app.route("/", methods=['POST'])
 def move():
-    #jsondata = request.get_json(force=True)
-    #data = json.loads(jsondata)
-    #print(type(data['arena']['state']))
+    jsondata = request.get_json(force=True)
+    print(type(jsondata))
     return moves[1]
 
 if __name__ == "__main__":
