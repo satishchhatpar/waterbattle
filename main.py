@@ -21,18 +21,18 @@ import random
 import json
 from flask import Flask, request
 
-logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
-logger = logging.getLogger(__name__)
+#logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
+#logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 moves = ['F', 'T', 'L', 'R']
 
 @app.route("/", methods=['POST'])
 def move():
-    jsondata = request.get_json(force=True)
-    data = json.loads(jsondata)
-    print(type(data['arena']['state']))
-    return moves[3]
+    #jsondata = request.get_json(force=True)
+    #data = json.loads(jsondata)
+    #print(type(data['arena']['state']))
+    return moves[1]
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
