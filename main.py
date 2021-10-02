@@ -18,6 +18,7 @@
 import os
 import logging
 import random
+import json
 from flask import Flask, request
 
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
@@ -29,13 +30,7 @@ moves = ['F', 'T', 'L', 'R']
 @app.route("/", methods=['POST'])
 def move():
     jsondata = request.get_json(force=True)
-    #str1 = ''.join(jsondata['arena'][0])
-    #logger.info("DIMS is = " + str1)
-    #logger.info(type(jsondata['arena']))
-    data = jsondata['arena']
-    #logger.info(data['dims'])
-    logger.info(type(data['state']))
-    #logger.info(request.json)
+    data = json.loads(jsondata)
     return moves[3]
 
 if __name__ == "__main__":
