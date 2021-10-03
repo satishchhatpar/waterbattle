@@ -30,19 +30,20 @@ def move():
     #print(x2)
     #print(y1)
     #print(y2)
-
+    s = 'T'
     #print(type(jmespath.search('arena.state.*.x', jsondata)))
     listx = jmespath.search('arena.state.*.x', jsondata)
     listy = jmespath.search('arena.state.*.y', jsondata)
     if (x1 in listx):
-        return 'T'
+        s = 'T'
     if (x2 in listx):
-        return 'T'
+        s = 'T'
     if (y1 in listy):
-        return 'T'
+        s = 'T'
     if (y2 in listy):
-        return 'T'
-     
+        s = 'T'
+    
+    return s
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
   
