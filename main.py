@@ -31,7 +31,7 @@ def move():
     print(y1)
     print(y2)
 
-    bool1 = contains(jmespath.search('arena.state.*.x', jsondata), x1)
+    print(type(jmespath.search('arena.state.*.x', jsondata)))
     print(bool1)
     return moves[random.randrange(len(moves))]
      
