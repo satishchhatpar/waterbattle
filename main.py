@@ -22,7 +22,14 @@ def move():
     print(x)
     print(y)
     print(direction)
-    
+    x1 = x - 1
+    x2 = x + 1
+    y1 = y - 1
+    y2 = y + 1
+    print(x1)
+    print(x2)
+    print(y1)
+    print(y2)
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
