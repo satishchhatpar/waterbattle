@@ -34,7 +34,8 @@ def move():
     #print(jmespath.search('arena.dims[0]', jsondata))
     #print(jmespath.search('arena.dims.state[*]."https://python-bot-fwutkkw3ka-as.a.run.app"[0]', jsondata))
     
-    print(jmespath.search('arena.dims.state["https://python-bot-fwutkkw3ka-as.a.run.app"].x', jsondata))
+    print(jmespath.search('arena.dims.state[?"https://python-bot-fwutkkw3ka-as.a.run.app"].x', jsondata))
+    
     
     return moves[random.randrange(len(moves))]
 
