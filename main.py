@@ -31,7 +31,8 @@ me = "https://python-bot-fwutkkw3ka-as.a.run.app"
 @app.route("/", methods=['POST'])
 def move():
     jsondata = request.get_json(force=True)
-    print(jmespath.search('arena.dims[0]', jsondata))
+    #print(jmespath.search('arena.dims[0]', jsondata))
+    print(jmespath.search('arena.dims.state.me.x', jsondata))
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
