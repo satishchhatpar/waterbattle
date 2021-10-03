@@ -36,7 +36,7 @@ def move():
     listy = jmespath.search('arena.state.*.y', jsondata)
     if (x1 in listx):
         return 'T'
-    if (x2 in lixtx):
+    if (x2 in listx):
         return 'T'
     if (y1 in listy):
         return 'T'
