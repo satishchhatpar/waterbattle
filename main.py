@@ -18,7 +18,7 @@
 import os
 import logging
 import random
-import json
+import jmespath
 from flask import Flask, request
 
 #logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
@@ -31,10 +31,7 @@ me = "https://python-bot-fwutkkw3ka-as.a.run.app"
 @app.route("/", methods=['POST'])
 def move():
     jsondata = request.get_json(force=True)
-    print(type(jsondata))
-    print(type(jsondata['arena']))
-    print(type(jsondata['arena']['state']))
-    print(type(jsondata['arena']['state'][me]))
+    print(jmespath.search('arena.dims[0]', jsondata))
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
