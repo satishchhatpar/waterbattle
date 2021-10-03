@@ -30,7 +30,12 @@ def move():
     print(x2)
     print(y1)
     print(y2)
-    return moves[random.randrange(len(moves))]
+
+    bool1 = jmespath.contains(jmespath.search('arena.state.*.x', jsondata), x1)
+    print(bool1)
+
+    if bool1:
+        return 'T'
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
