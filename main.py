@@ -1,5 +1,6 @@
 
 # Water Battle , GCP Serverless Hackathon
+#anthos
 
 import os
 import logging
